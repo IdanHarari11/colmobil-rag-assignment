@@ -38,3 +38,18 @@ Quality review is AI-assisted, not independent human adjudication. Reference-pag
 4. Independently review technical claims and safety completeness, including oil shutdown advice, TPMS distinctions and table extraction. Prompt/ID/regex validation does not prove grounding.
 
 The first two are currently blocked by expired local Vercel authentication, for which a device-login approval was requested. Work is not labeled ready while these gates are open.
+
+
+## Hosted completion update
+
+Vercel authentication was renewed after the user approved device login. The existing Colmobil key was saved as a **Secret** for Production and Preview on the original project; no new key was created. A fresh production build used application-source SHA `66588709d1f86c7c24d2ffa4329b7ffab26fa708`.
+
+- Deployment: `dpl_HL1xaT4MVEQXHNoKmYrqydm8g78G`, READY. Exact URL: https://colmobil-rag-assignment-b82xxzjah-idanharari11s-projects.vercel.app . Stable alias: https://colmobil-rag-assignment.vercel.app .
+- Authenticated GET health/home: 200; health `configured:true`; Hebrew/RTL homepage. Anonymous health request: 302 to authentication; deployment protection retained.
+- Actual hosted model calls: TPMS 200/answered/Hybrid, unrelated code request 200/out_of_scope, hot cap 200/insufficient_evidence with bounded safe wording, resumed driving 200/clarification_needed/safety_pause. Empty question: 400.
+- Hosted PDF: 21,850,407 bytes, SHA-256 identical to the original supplied manual.
+- Actual hosted four-turn conversation: unknown yellow light → clarification; steady TPMS → asks about preceding flash; confirmed minute flashing → grounded malfunction answer; tow request → states it cannot dispatch. Malformed SDP: 400.
+- Chrome on the exact hosted deployment generated a Hebrew TPMS answer, displayed simulated handoff, expanded numbered sources and linked PDF pages 510 and 512. Screenshot visually confirmed the RTL layout.
+- Reports: `eval_results/colmobil-deployed.json` and `colmobil-deployed-conversation.json`.
+
+The earlier expired-authentication blocker is resolved. Remaining gates are actual browser microphone/audio/listening, interruption/noise/mobile tests and independent semantic review. The user was offered an assisted microphone test; no response or successful acoustic test is assumed. This final documentation update changes no application source relative to the tested SHA.

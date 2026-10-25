@@ -4,7 +4,7 @@ A first-line service demo for Hyundai Tucson Hybrid 2025. Customers can type in 
 
 ## Status
 
-Current continuation evidence is in [docs/LIVE_QA.md](docs/LIVE_QA.md). A dedicated key has been created locally, real embeddings were built for all 646 manual chunks, and provider-backed Hebrew text and Realtime audio checks ran. The source is published to the dedicated GitHub repository and Vercel built an initial protected deployment. Hosted secret setup and real browser microphone/listening/interruptions are still pending; do not treat the initial deployment or structural test passes as a completed release.
+Current continuation evidence is in [docs/LIVE_QA.md](docs/LIVE_QA.md). A dedicated key has been created locally, real embeddings were built for all 646 manual chunks, and provider-backed Hebrew text and Realtime audio checks ran. The source is published to the dedicated GitHub repository and Vercel built an initial protected deployment. The dedicated hosted Secret is connected and the production deployment passed live HTTP and desktop text/source checks. Real browser microphone/listening/interruptions, mobile/noise tests and independent semantic review remain pending; structural passes are not a completed release.
 
 ## Development process
 
@@ -83,5 +83,7 @@ ElevenLabs is a possible alternative output layer after Hebrew listening tests; 
 - This demo has no durable sessions, authentication, distributed rate limits or CRM integration. Keep Vercel deployment protection enabled while using a paid key. Sessions live in browser memory and reset on refresh. Do not put personal details in test conversations.
 
 ## Vercel
+
+Live protected demo: https://colmobil-rag-assignment.vercel.app . Verified application-source candidate: `66588709d1f86c7c24d2ffa4329b7ffab26fa708`; exact tested deployment: https://colmobil-rag-assignment-b82xxzjah-idanharari11s-projects.vercel.app . See LIVE_QA for pending release gates.
 
 Create a separate project connected to this repository. Set `OPENAI_API_KEY` server-side and the optional settings from `.env.example`. Use `pnpm build`, Node 22+, Next.js. `next.config.ts` bundles the manual/chunks/index and synthetic examples with the API functions. Test the **exact deployment commit** and new key before submission. No changes to the original Ofek project or its keys are required.

@@ -30,5 +30,7 @@
     "lint": "passed",
     "productionBuild": "passed"
   },
-  "releaseStatus": "pending hosted key, deployed provider QA, real microphone/listening and independent semantic review"
+  "releaseStatus": "hosted key and text verified; real browser microphone/listening/interruptions, mobile/noise and independent semantic review pending",
+  "testedApplicationCommit": "66588709d1f86c7c24d2ffa4329b7ffab26fa708",
+  "testedDeployment": "dpl_HL1xaT4MVEQXHNoKmYrqydm8g78G"
 }
