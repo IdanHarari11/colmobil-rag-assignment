@@ -1,0 +1,3 @@
+Synthetic Hebrew PCM test fixture created with OpenAI gpt-4o-mini-tts/alloy on 2026-10-25. Text: נדלקה לי נורה צהובה בלוח המחוונים. מה לעשות?
+
+24kHz mono PCM16 WAV, 2 seconds leading and 40 seconds trailing silence for server VAD. This is test input, not knowledge-base evidence, a human recording, or proof of acoustic quality. `eval:voice:colmobil` sends it to the actual Realtime API and invokes the same supportAsk pipeline on its actual transcript; it writes the provider report and a local scratch output PCM. It costs real API usage and times out after 60 seconds. The run does not verify WebRTC microphone permissions, echo, actual playback fidelity, interruptions, mobile or noisy conditions.

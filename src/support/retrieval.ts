@@ -6,7 +6,8 @@ import { retrieve } from '@/rag/retrieve';
 
 export function manualSearchQuery(question: string) {
   // Bridge everyday warning-light wording to the manufacturer's terms; search only.
-  const normalized=question.replace(/נורת/g,'נורית');
+  let normalized=question.replace(/נורת/g,'נורית').replace(/שישים שניות|60 שניות/g,'דקה');
+  if(/צמיג|לחץ.{0,8}אוויר/.test(normalized))normalized+=' מערכת TPMS';
   return /לחץ.*שמן|שמן.*לחץ/.test(normalized)
     ? normalized+' נורית אזהרת לחץ שמן מנוע נמוך' : normalized;
 }

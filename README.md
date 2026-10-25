@@ -4,7 +4,7 @@ A first-line service demo for Hyundai Tucson Hybrid 2025. Customers can type in 
 
 ## Status
 
-The code builds without credentials. **A new assignment-specific OpenAI key is required for generated answers, genuine vector indexing, and live voice.** Until indexing runs, the retrieval mode is explicitly `lexical_pending_embeddings`; no fake embeddings are used. No live answer or voice-quality claim is made before provider-backed tests.
+Current continuation evidence is in [docs/LIVE_QA.md](docs/LIVE_QA.md). A dedicated key has been created locally, real embeddings were built for all 646 manual chunks, and provider-backed Hebrew text and Realtime audio checks ran. The source is published to the dedicated GitHub repository and Vercel built an initial protected deployment. Hosted secret setup and real browser microphone/listening/interruptions are still pending; do not treat the initial deployment or structural test passes as a completed release.
 
 ## Development process
 

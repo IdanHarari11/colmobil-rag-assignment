@@ -17,7 +17,10 @@
     "test:colmobil": "vitest run src/support",
     "test:core": "vitest run src/rag/bm25.test.ts src/rag/hybrid-retrieve.test.ts src/rag/history.test.ts src/rag/rewrite-query.test.ts",
     "test:gates": "pnpm typecheck && pnpm lint && pnpm test:colmobil && pnpm test:core && pnpm build",
-    "eval:answers:colmobil": "node --import tsx scripts/eval-colmobil-answers.ts"
+    "eval:answers:colmobil": "node --import tsx scripts/eval-colmobil-answers.ts",
+    "eval:retrieval:comparison": "node --import tsx scripts/eval-colmobil-retrieval-comparison.ts",
+    "eval:conversations:colmobil": "node --import tsx scripts/eval-colmobil-conversations.ts",
+    "eval:voice:colmobil": "node --import tsx scripts/eval-colmobil-voice.ts"
   },
   "dependencies": {
     "@assistant-ui/core": "^0.3.30",
@@ -52,12 +55,14 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/ws": "^8.18.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vercel": "^65.0.0",
-    "vitest": "^5.0.5"
+    "vitest": "^5.0.5",
+    "ws": "^8.22.0"
   },
   "packageManager": "pnpm@12.11.2",
   "pnpm": {

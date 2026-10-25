@@ -50,4 +50,11 @@ Escalation levels are none, service and urgent. A handoff contains the issue, ra
 - Existing direct OpenAI SDK: honors the requested reused stack and keeps Realtime integration direct; no unnecessary AI Gateway migration.
 - RAG before speech: consistent evidence policy and source display, with more latency than a free-form speech agent.
 - Prompt safety and structural validation: practical assignment scope; no claim of clinical/mechanical or semantic certification.
-- Private new repository and protected Preview: reviewable work before deciding submission visibility.
+- Dedicated public repository with protected Vercel deployment; server-only secrets.
+
+
+## Measured safety routes added during continuation
+
+Live evaluation showed that repeated prompt rules alone did not reliably prevent unsolicited cap-opening steps, driving/app instructions or invented prior TPMS flashing. Narrow server gates now pause explicit resumed-driving requests, suppress hot-cap removal procedures and ask whether a steady TPMS indicator had flashed when that history is absent. These rules supplement the existing RAG path and have targeted regressions. They are limited Hebrew patterns, not a comprehensive hazard or semantic safety classifier.
+
+Connection setup now has a 30-second deadline covering pending microphone permission as well as SDP/data-channel setup. The ten-minute session limit starts only when the data channel opens. A timeout/late-microphone-resolution regression checks cleanup.

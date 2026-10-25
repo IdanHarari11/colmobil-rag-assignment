@@ -20,6 +20,7 @@ export class SupportVoice {
   if(this.closed)return;
   this.connectAbort=new AbortController();
   this.handlers.onState('connecting');
+  this.timer=setTimeout(()=>{if(!this.closed){this.handlers.onError('החיבור למיקרופון או לשירות הקולי התעכב. אפשר לנסות שוב או להמשיך בטקסט.');this.stop();}},30000);
   try{
    this.stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
    if(this.closed){this.stream.getTracks().forEach(t=>t.stop());return;}
@@ -28,7 +29,7 @@ export class SupportVoice {
    pc.ontrack=event=>{if(this.audio){this.audio.srcObject=event.streams[0];void this.audio.play().catch(()=>this.handlers.onError('יש לאפשר השמעת קול בדפדפן.'));}};
    this.stream.getTracks().forEach(track=>pc.addTrack(track,this.stream!));
    const dc=pc.createDataChannel('oai-events');this.dc=dc;
-   dc.onopen=()=>this.handlers.onState('listening');
+   dc.onopen=()=>{if(this.timer)clearTimeout(this.timer);this.handlers.onState('listening');this.timer=setTimeout(()=>{this.handlers.onError('השיחה הסתיימה לאחר 10 דקות. אפשר להתחבר מחדש.');this.stop();},10*60*1000);};
    dc.onmessage=event=>{try{void this.handle(JSON.parse(event.data));}catch{this.handlers.onError('התקבל אירוע קולי לא תקין. אפשר להמשיך בטקסט.');}};
    pc.onconnectionstatechange=()=>{if(['failed','closed','disconnected'].includes(pc.connectionState)&&!this.closed){this.handlers.onError('השיחה נותקה. אפשר להתחבר מחדש.');this.stop();}};
    const offer=await pc.createOffer();await pc.setLocalDescription(offer);
@@ -36,7 +37,6 @@ export class SupportVoice {
    if(!response.ok){const data=await response.json();throw new Error(data.error||'החיבור נכשל');}
    const sdp=await response.text();if(this.closed)return;
    await pc.setRemoteDescription({type:'answer',sdp});
-   this.timer=setTimeout(()=>{this.handlers.onError('השיחה הסתיימה לאחר 10 דקות. אפשר להתחבר מחדש.');this.stop();},10*60*1000);
   }catch(error){if(!this.closed)this.handlers.onError(error instanceof Error?error.message:'לא ניתן לגשת למיקרופון');this.stop();}
  }
  private async handle(event:Record<string,unknown>){

@@ -4,6 +4,7 @@ import { applyHistoryWindow, parseAndValidateHistory } from '@/rag/history';
 import { rewriteQuery } from '@/rag/rewrite-query';
 import { supportRetrieve } from './retrieval';
 import { SUPPORT_POLICY } from './policy';
+import { immediateTriage,limitHotCapAnswer } from './triage';
 import { retrieveDialogueExample } from './dialogue';
 
 export interface SupportAnswer {
@@ -27,6 +28,8 @@ export function validateSupportPayload(value:unknown,allowedIds:Set<string>) {
 export async function supportAsk(question:string,historyInput:unknown,signal?:AbortSignal):Promise<SupportAnswer>{
  const start=performance.now(),requestId=crypto.randomUUID();
  const history=applyHistoryWindow(parseAndValidateHistory(historyInput));
+ const triage=immediateTriage(question);
+ if(triage)return {requestId,status:'clarification_needed',answer:triage.answer,sources:[],escalation:'none',handoffReason:'',retrievalMode:'safety_pause'};
  const apiKey=getOpenAiApiKey({required:true});
  let searchQuestion=question;
  if(history.length)searchQuestion=(await rewriteQuery({question,history,signal})).standaloneQuestion;
@@ -35,6 +38,14 @@ export async function supportAsk(question:string,historyInput:unknown,signal?:Ab
  const client=new OpenAI({apiKey,maxRetries:0,timeout:45000});
  const completion=await client.chat.completions.create({model:process.env.GENERATION_MODEL||'gpt-4.1-mini',temperature:0,max_completion_tokens:800,messages:[{role:'system',content:SUPPORT_POLICY},...history,{role:'user',content:JSON.stringify({question,standaloneQuestion:searchQuestion,dialogueExample,sources:retrieval.hits.map(h=>({chunkId:h.chunkId,pages:h.pages,text:h.text}))})}],response_format:{type:'json_schema',json_schema:{name:'colmobil_answer',strict:true,schema}}},{signal});
  const payload=validateSupportPayload(JSON.parse(completion.choices[0]?.message?.content||'null'),new Set(retrieval.hits.map(h=>h.chunkId)));
+ if(payload.status==='answered'&&/TPMS|צמיג|לחץ.{0,8}אוויר/.test(searchQuestion)&&/ברצף|קבוע/.test(question)&&!history.filter(m=>m.role==='user').concat({role:'user',content:question}).some(m=>/הבהב|מהבהב/.test(m.content))){
+  payload.status='clarification_needed';payload.answer='האם הנורה הבהבה במשך כדקה לפני שנשארה דולקת, או שהיא נדלקה ברצף ללא הבהוב?';payload.citedChunkIds=[];payload.escalation='none';payload.handoffReason='';
+ }
+ if(limitHotCapAnswer(question,payload.answer)){
+  // Fail closed rather than return an unnecessary cap-removal procedure.
+  payload.status='insufficient_evidence';payload.answer='אין לפתוח את מכסה נוזל הקירור כשהמנוע חם. יש להמתין להתקררות המנוע. אם נדרש בירור או טיפול, יש לפנות לסיוע מקצועי.';payload.escalation='service';payload.handoffReason='נדרש סיוע מקצועי ללא הנחיות לפתיחת מכסה חם.';
+ }
+ if(payload.status!=='out_of_scope'&&payload.escalation==='none'&&/מומלץ.*(?:מרכז שירות|מוסך|סיוע מקצועי)|יש לפנות.*(?:מרכז שירות|מוסך|סיוע מקצועי)/.test(payload.answer)){payload.escalation='service';payload.handoffReason='מומלצת בדיקה מקצועית כפי שמפורט בתשובה.';}
  const sources=[...new Set(payload.citedChunkIds)].map(id=>{const h=retrieval.hits.find(h=>h.chunkId===id)!;return {chunkId:id,text:h.text,pages:h.pages||[],title:h.documentTitle||'ספר הרכב'};});
  // Metadata-only evidence: no audio, question, source body, answer or keys logged.
  console.info(JSON.stringify({event:'support_ask',requestId,retrievalMode:retrieval.mode,sourceIds:sources.map(s=>s.chunkId),status:payload.status,escalation:payload.escalation,ms:Math.round(performance.now()-start),usage:completion.usage}));
