@@ -1,0 +1,209 @@
+[
+  {
+    "id": "oil",
+    "synthetic": true,
+    "purpose": "dialogue training examples; technical actions require original manual evidence",
+    "manualPdfPages": [
+      131
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "נדלקה נורת שמן"
+      },
+      {
+        "role": "assistant",
+        "content": "האם זו נורת לחץ שמן או נורת מפלס שמן, ומה בדיוק מופיע בלוח המחוונים?"
+      },
+      {
+        "role": "user",
+        "content": "טוסון היברידי 2025, אני חונה. זו נורת לחץ שמן."
+      },
+      {
+        "role": "assistant",
+        "content": "בספר הרכב מוסבר שלחץ שמן נמוך מחייב עצירה בטוחה ודימום המנוע. מומלץ לקבל הנחיה ממרכז שירות לפני המשך טיפול."
+      }
+    ]
+  },
+  {
+    "id": "tpms",
+    "synthetic": true,
+    "purpose": "dialogue training examples; technical actions require original manual evidence",
+    "manualPdfPages": [
+      133,
+      510
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "מה זה TPMS?"
+      },
+      {
+        "role": "assistant",
+        "content": "אסביר לפי ספר הטוסון ההיברידי 2025. האם זו שאלה כללית או שנדלקה נורה כרגע?"
+      },
+      {
+        "role": "user",
+        "content": "טוסון היברידי 2025."
+      },
+      {
+        "role": "assistant",
+        "content": "זו מערכת בקרת לחץ האוויר בצמיגים. כשהנורית דולקת יש לבדוק את לחץ האוויר לפי התווית ברכב; הבהוב ולאחריו אור קבוע עשוי להעיד על תקלה במערכת."
+      }
+    ]
+  },
+  {
+    "id": "tyre",
+    "synthetic": true,
+    "purpose": "dialogue training examples; technical actions require original manual evidence",
+    "manualPdfPages": [
+      510,
+      511
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "מה לחץ האוויר הנכון?"
+      },
+      {
+        "role": "assistant",
+        "content": "מה מידת הצמיג, והאם אפשר לראות את תווית לחצי הניפוח כשהרכב חונה?"
+      },
+      {
+        "role": "user",
+        "content": "טוסון היברידי 2025, חונה."
+      },
+      {
+        "role": "assistant",
+        "content": "יש להסתמך על תווית לחצי הניפוח ברכב ולבדוק כשהצמיגים קרים. לא אמציא מספר בלי מידת הצמיג והנתון המתאים."
+      }
+    ]
+  },
+  {
+    "id": "charging",
+    "synthetic": true,
+    "purpose": "dialogue training examples; technical actions require original manual evidence",
+    "manualPdfPages": [
+      132
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "נורת מצבר נדלקה"
+      },
+      {
+        "role": "assistant",
+        "content": "האם זו נורת מערכת הטעינה, והאם יש תסמינים חריגים נוספים?"
+      },
+      {
+        "role": "user",
+        "content": "כן, טוסון היברידי 2025."
+      },
+      {
+        "role": "assistant",
+        "content": "ספר הרכב מתאר נורת תקלה במערכת הטעינה ומנחה לעצור בבטחה. כדאי לפנות למרכז שירות להמשך בדיקה, בלי לבצע בדיקות מכניות מסוכנות לבד."
+      }
+    ]
+  },
+  {
+    "id": "hot",
+    "synthetic": true,
+    "purpose": "dialogue training examples; technical actions require original manual evidence",
+    "manualPdfPages": [
+      507,
+      508
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "יש אדים מתא המנוע"
+      },
+      {
+        "role": "assistant",
+        "content": "האם האדים עדיין יוצאים מתא המנוע? אין לפתוח מכסה קירור חם."
+      },
+      {
+        "role": "user",
+        "content": "כבר עצרתי, טוסון היברידי 2025."
+      },
+      {
+        "role": "assistant",
+        "content": "לפי הספר, אם אדים יוצאים מתא המנוע יש לדומם את המנוע ולא לפתוח את מכסה המנוע עד להפסקת פליטת האדים. אין לפתוח מכסה מערכת קירור חמה. יש לפנות לסיוע מקצועי."
+      }
+    ]
+  },
+  {
+    "id": "unknown",
+    "synthetic": true,
+    "purpose": "dialogue training examples; technical actions require original manual evidence",
+    "manualPdfPages": [],
+    "messages": [
+      {
+        "role": "user",
+        "content": "יש נורה צהובה"
+      },
+      {
+        "role": "assistant",
+        "content": "מה הסמל שמופיע, והאם הנורה מהבהבת או דולקת ברצף?"
+      },
+      {
+        "role": "user",
+        "content": "לא יודע."
+      },
+      {
+        "role": "assistant",
+        "content": "אי אפשר לזהות את האזהרה מהצבע בלבד. כשהרכב חונה בבטחה אפשר לתאר את הסמל; אם יש תסמינים חריגים עדיף לקבל סיוע אנושי."
+      }
+    ]
+  },
+  {
+    "id": "handoff",
+    "synthetic": true,
+    "purpose": "dialogue training examples; technical actions require original manual evidence",
+    "manualPdfPages": [],
+    "messages": [
+      {
+        "role": "user",
+        "content": "תזמין לי גרר"
+      },
+      {
+        "role": "assistant",
+        "content": "אפשר להכין סיכום לפנייה לנציג, אבל זו סביבת הדגמה ללא חיבור לשירותי גרירה."
+      },
+      {
+        "role": "user",
+        "content": "אז תכין סיכום."
+      },
+      {
+        "role": "assistant",
+        "content": "אכין סיכום על בסיס מה שנמסר בשיחה. לא נשלחה הזמנה ולא נוצר קשר עם נציג."
+      }
+    ]
+  },
+  {
+    "id": "flashing",
+    "synthetic": true,
+    "purpose": "dialogue training examples; technical actions require original manual evidence",
+    "manualPdfPages": [
+      132
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "נורת מנוע מהבהבת והמנוע רועד"
+      },
+      {
+        "role": "assistant",
+        "content": "יש כאן תסמינים שמצריכים סיוע מקצועי. האם יש כרגע עשן או סכנה מיידית נוספת?"
+      },
+      {
+        "role": "user",
+        "content": "כן, טוסון היברידי 2025."
+      },
+      {
+        "role": "assistant",
+        "content": "יש כאן תסמינים שמצריכים סיוע מקצועי. לא אוכל לאבחן את הסיבה או לאשר המשך נסיעה. בספר הרכב מפורט שיש לבדוק תקלה במנוע במרכז שירות."
+      }
+    ]
+  }
+]

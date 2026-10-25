@@ -1,0 +1,56 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/dist
+
+# local RAG build intermediates / traces (index + chunks are committed for deploy)
+/data/parsed/
+/data/traces/
+/data/ingestion-report.json
+/data/chunking-report.json
+# ask-path traces (also under data/traces when using default path)
+/logs/
+
+# Keep committed evaluation reports for submission; ignore ad-hoc local scratch only.
+/eval_results/.scratch/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env / secrets — never commit keys
+.env
+.env.*
+!.env.example
+
+# local planning scratch (not part of submission)
+.planning/
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

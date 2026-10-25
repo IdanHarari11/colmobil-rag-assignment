@@ -1,0 +1,103 @@
+{
+  "kind": "small keyword-heavy retrieval smoke set; not an unseen benchmark or answer accuracy",
+  "count": 5,
+  "hitRateAt6": 1,
+  "mrr": 0.85,
+  "rows": [
+    {
+      "id": "oil",
+      "q": "נורית אזהרת לחץ שמן מנוע נמוך",
+      "pages": [
+        131
+      ],
+      "mode": "lexical_pending_embeddings",
+      "pagesRetrieved": [
+        131,
+        147,
+        553,
+        552,
+        128,
+        130
+      ],
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "tpms",
+      "q": "מערכת TPMS לחץ אוויר בצמיגים",
+      "pages": [
+        133,
+        510,
+        511,
+        512,
+        513
+      ],
+      "mode": "lexical_pending_embeddings",
+      "pagesRetrieved": [
+        509,
+        501,
+        612,
+        513,
+        510,
+        512
+      ],
+      "hitAt6": true,
+      "reciprocalRank": 0.25
+    },
+    {
+      "id": "mil",
+      "q": "נורית תקלה MIL מערכת בקרת הפליטה מנוע",
+      "pages": [
+        132
+      ],
+      "mode": "lexical_pending_embeddings",
+      "pagesRetrieved": [
+        132,
+        140,
+        509,
+        501,
+        137,
+        139
+      ],
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "charging",
+      "q": "נורית אזהרה מערכת הטעינה אלטרנטור",
+      "pages": [
+        132
+      ],
+      "mode": "lexical_pending_embeddings",
+      "pagesRetrieved": [
+        132,
+        273,
+        446,
+        135,
+        274,
+        23
+      ],
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "hot",
+      "q": "המנוע מתחמם אדים נוזל קירור",
+      "pages": [
+        507,
+        508
+      ],
+      "mode": "lexical_pending_embeddings",
+      "pagesRetrieved": [
+        507,
+        508,
+        540,
+        550,
+        45,
+        556
+      ],
+      "hitAt6": true,
+      "reciprocalRank": 1
+    }
+  ]
+}

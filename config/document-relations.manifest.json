@@ -1,0 +1,200 @@
+{
+  "manifestVersion": 1,
+  "notes": [
+    "Hand-authored applicability map grounded only in cited chunk evidence.",
+    "Fields left unknown when the corpus does not state them explicitly.",
+    "sourceHash must match chunk metadata; stale entries fail validation."
+  ],
+  "documents": [
+    {
+      "documentId": "corpus/01_car_comprehensive_policy_2024",
+      "documentFamily": "car_comprehensive_policy",
+      "versionLabel": "2024",
+      "applicability": {
+        "kind": "issue_or_renewal_before",
+        "exclusiveEndDate": "2026-03-01",
+        "summary": "Applies to comprehensive auto policies issued or renewed before 1.3.2026 (continues until next renewal per 2026 policy text)."
+      },
+      "relationships": [
+        {
+          "type": "superseded_by",
+          "targetDocumentId": "corpus/02_car_comprehensive_policy_2026",
+          "summary": "2026 version governs policies issued or renewed from 1.3.2026 onward."
+        },
+        {
+          "type": "supplemented_by",
+          "targetDocumentId": "corpus/03_car_general_terms",
+          "summary": "2024 policy text instructs reading together with general car terms and purchased riders."
+        }
+      ],
+      "documentRole": "binding_policy",
+      "evidence": [
+        {
+          "chunkIds": ["corpus/01_car_comprehensive_policy_2024:c000"],
+          "sourceBlockIds": [
+            "corpus/01_car_comprehensive_policy_2024:b001",
+            "corpus/01_car_comprehensive_policy_2024:b003"
+          ],
+          "quoteSnippet": "גרסה 2024 בתוקף מיום 1.1.2024",
+          "sourceHash": "ccca4c209cab5497393b2130fcb1a03d89b5935c523616fa38f369e12fc45627"
+        }
+      ],
+      "sourceHash": "ccca4c209cab5497393b2130fcb1a03d89b5935c523616fa38f369e12fc45627"
+    },
+    {
+      "documentId": "corpus/02_car_comprehensive_policy_2026",
+      "documentFamily": "car_comprehensive_policy",
+      "versionLabel": "2026",
+      "applicability": {
+        "kind": "issue_or_renewal_on_or_after",
+        "inclusiveStartDate": "2026-03-01",
+        "summary": "Applies to comprehensive auto policies issued or renewed on/after 1.3.2026. Pre-transition policies stay on 2024 until their next renewal."
+      },
+      "relationships": [
+        {
+          "type": "supersedes",
+          "targetDocumentId": "corpus/01_car_comprehensive_policy_2024",
+          "summary": "For policies issued or renewed from 1.3.2026; earlier issue/renewal remains on 2024 until next renewal."
+        },
+        {
+          "type": "supplemented_by",
+          "targetDocumentId": "corpus/03_car_general_terms",
+          "summary": "Read together with general car terms (stated in policy family texts)."
+        }
+      ],
+      "documentRole": "binding_policy",
+      "evidence": [
+        {
+          "chunkIds": ["corpus/02_car_comprehensive_policy_2026:c000"],
+          "sourceBlockIds": [
+            "corpus/02_car_comprehensive_policy_2026:b001",
+            "corpus/02_car_comprehensive_policy_2026:b003"
+          ],
+          "quoteSnippet": "בתוקף לפוליסות שהונפקו או חודשו מיום 1.3.2026 ואילך. פוליסות שהונפקו או חודשו לפני 1.3.2026 ממשיכות לפעול לפי גרסת 2024 עד מועד החידוש הבא שלהן.",
+          "sourceHash": "a0307e468e025388a3c5c588b27dca6d9458f6bd6d4069228cdd22932ebb02f4"
+        }
+      ],
+      "sourceHash": "a0307e468e025388a3c5c588b27dca6d9458f6bd6d4069228cdd22932ebb02f4"
+    },
+    {
+      "documentId": "corpus/03_car_general_terms",
+      "documentFamily": "car_general_terms",
+      "versionLabel": "edition_7",
+      "applicability": {
+        "kind": "unknown",
+        "summary": "Applies to all company auto policies unless the specific policy states otherwise (per document text)."
+      },
+      "relationships": [],
+      "documentRole": "binding_general_terms",
+      "evidence": [
+        {
+          "chunkIds": ["corpus/03_car_general_terms:c000"],
+          "sourceBlockIds": ["corpus/03_car_general_terms:b001"],
+          "quoteSnippet": "מהדורה 7 חלים על כל פוליסות הרכב של החברה, אלא אם נקבע אחרת בפוליסה עצמה",
+          "sourceHash": "f74c21c87c3a589726280c0364940ce5f15add433184a9da0906a50c6daefe40"
+        }
+      ],
+      "sourceHash": "f74c21c87c3a589726280c0364940ce5f15add433184a9da0906a50c6daefe40"
+    },
+    {
+      "documentId": "corpus/22_cancellation_procedure_2023",
+      "documentFamily": "cancellation_procedure",
+      "versionLabel": "2023",
+      "applicability": {
+        "kind": "in_force_from",
+        "inclusiveStartDate": "2023-04-01",
+        "summary": "Base cancellation procedure in force from 1.4.2023; refund-calculation section partially updated from 1.1.2025."
+      },
+      "relationships": [
+        {
+          "type": "partially_updated_by",
+          "targetDocumentId": "corpus/23_cancellation_procedure_update_2025",
+          "affectedSections": ["חישוב ההחזר"],
+          "summary": "From 1.1.2025 the refund-calculation section is replaced by the 2025 update; other 2023 provisions remain in force."
+        }
+      ],
+      "documentRole": "binding_procedure",
+      "evidence": [
+        {
+          "chunkIds": ["corpus/22_cancellation_procedure_2023:c000"],
+          "sourceBlockIds": [
+            "corpus/22_cancellation_procedure_2023:b001",
+            "corpus/22_cancellation_procedure_2023:b003"
+          ],
+          "quoteSnippet": "בתוקף מיום 1.4.2023",
+          "sourceHash": "635f80078063fa762c440e5440329a9f7f8a5220751b9cde08da9395aaec9245"
+        },
+        {
+          "chunkIds": ["corpus/23_cancellation_procedure_update_2025:c000"],
+          "sourceBlockIds": ["corpus/23_cancellation_procedure_update_2025:b001"],
+          "quoteSnippet": "בתוקף מיום 1.1.2025. העדכון משנה את סעיף \"חישוב ההחזר\" בלבד. שאר הוראות נוהל 2023 נותרו בתוקף.",
+          "sourceHash": "e9039c4df9ec9de91aba7f859e2f25a2f8da6266d0461062c107097766b9c3e5"
+        }
+      ],
+      "sourceHash": "635f80078063fa762c440e5440329a9f7f8a5220751b9cde08da9395aaec9245"
+    },
+    {
+      "documentId": "corpus/23_cancellation_procedure_update_2025",
+      "documentFamily": "cancellation_procedure",
+      "versionLabel": "2025_partial_update",
+      "applicability": {
+        "kind": "partial_update_from",
+        "inclusiveStartDate": "2025-01-01",
+        "affectedSections": ["חישוב ההחזר"],
+        "summary": "Partial update effective 1.1.2025 replacing only the refund-calculation section of the 2023 procedure."
+      },
+      "relationships": [
+        {
+          "type": "partially_updates",
+          "targetDocumentId": "corpus/22_cancellation_procedure_2023",
+          "affectedSections": ["חישוב ההחזר"],
+          "summary": "Replaces refund calculation only; remaining 2023 procedure rules stay in force."
+        }
+      ],
+      "documentRole": "binding_procedure_update",
+      "evidence": [
+        {
+          "chunkIds": ["corpus/23_cancellation_procedure_update_2025:c000"],
+          "sourceBlockIds": [
+            "corpus/23_cancellation_procedure_update_2025:b001",
+            "corpus/23_cancellation_procedure_update_2025:b003"
+          ],
+          "quoteSnippet": "בתוקף מיום 1.1.2025. העדכון משנה את סעיף \"חישוב ההחזר\" בלבד. שאר הוראות נוהל 2023 נותרו בתוקף.",
+          "sourceHash": "e9039c4df9ec9de91aba7f859e2f25a2f8da6266d0461062c107097766b9c3e5"
+        }
+      ],
+      "sourceHash": "e9039c4df9ec9de91aba7f859e2f25a2f8da6266d0461062c107097766b9c3e5"
+    },
+    {
+      "documentId": "corpus/09_marketing_brochure_car",
+      "documentFamily": "car_marketing",
+      "versionLabel": "jan_2024_print",
+      "applicability": {
+        "kind": "marketing_non_binding",
+        "summary": "Marketing brochure only; binding terms are the policy and service riders it points to."
+      },
+      "relationships": [
+        {
+          "type": "defers_to",
+          "targetDocumentId": "corpus/01_car_comprehensive_policy_2024",
+          "summary": "Brochure states binding terms are the policy and service riders (family), not the marketing text."
+        },
+        {
+          "type": "defers_to",
+          "targetDocumentId": "corpus/02_car_comprehensive_policy_2026",
+          "summary": "Same brochure deferral applies to whichever binding policy version is in force for the customer."
+        }
+      ],
+      "documentRole": "marketing",
+      "evidence": [
+        {
+          "chunkIds": ["corpus/09_marketing_brochure_car:c000"],
+          "sourceBlockIds": ["corpus/09_marketing_brochure_car:b004"],
+          "quoteSnippet": "המידע בעלון זה הוא שיווקי בלבד ונכון למועד הדפסתו (ינואר 2024). התנאים המחייבים הם תנאי הפוליסה וכתבי השירות.",
+          "sourceHash": "543dde867d3d6388c57da469a92aa940185073f71446c267aef4e3d462278c77"
+        }
+      ],
+      "sourceHash": "543dde867d3d6388c57da469a92aa940185073f71446c267aef4e3d462278c77"
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "createdAt": "2026-10-25T17:48:43.454Z",
+  "kind": "exposed development page-hit comparison; not answer accuracy",
+  "manifest": {
+    "formatVersion": 1,
+    "model": "text-embedding-3-small",
+    "dimensions": 1536,
+    "chunksInputHash": "90222a3ebad96077f6edb3115886945ea2a307025f73ef19af1bf13e567a4984",
+    "embeddingTextHash": "ac296a39e16474bf6d81b5ea05ba6e22c5c6d5d5f4b3946ee504acc3284e7984",
+    "createdAt": "2026-10-25T17:45:33.110Z",
+    "chunkCount": 646,
+    "usage": {
+      "promptTokens": 664807,
+      "totalTokens": 664807
+    }
+  },
+  "pdfSha256": "29c33530abe4d7b37fd1862f18a294295456c317ef27d30fbe984668eb9f562d",
+  "summary": [
+    {
+      "mode": "lexical",
+      "count": 7,
+      "hitAt6": 1,
+      "mrr": 0.9047619047619048
+    },
+    {
+      "mode": "vector",
+      "count": 7,
+      "hitAt6": 0.5714285714285714,
+      "mrr": 0.5
+    },
+    {
+      "mode": "hybrid",
+      "count": 7,
+      "hitAt6": 1,
+      "mrr": 0.6904761904761906
+    }
+  ],
+  "rows": [
+    {
+      "id": "oil",
+      "question": "נדלקה נורת לחץ שמן מנוע",
+      "referencePdfPages": [
+        131
+      ],
+      "mode": "lexical",
+      "pages": [
+        131,
+        553,
+        54,
+        540,
+        55,
+        45
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "oil",
+      "question": "נדלקה נורת לחץ שמן מנוע",
+      "referencePdfPages": [
+        131
+      ],
+      "mode": "vector",
+      "pages": [
+        552,
+        508,
+        553,
+        556,
+        550,
+        354
+      ],
+      "rank": null,
+      "hitAt6": false,
+      "reciprocalRank": 0
+    },
+    {
+      "id": "oil",
+      "question": "נדלקה נורת לחץ שמן מנוע",
+      "referencePdfPages": [
+        131
+      ],
+      "mode": "hybrid",
+      "pages": [
+        553,
+        131,
+        552,
+        54,
+        550,
+        547
+      ],
+      "rank": 2,
+      "hitAt6": true,
+      "reciprocalRank": 0.5
+    },
+    {
+      "id": "mil",
+      "question": "מה המשמעות של נורית MIL?",
+      "referencePdfPages": [
+        132
+      ],
+      "mode": "lexical",
+      "pages": [
+        132,
+        23,
+        129,
+        12,
+        327,
+        612
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "mil",
+      "question": "מה המשמעות של נורית MIL?",
+      "referencePdfPages": [
+        132
+      ],
+      "mode": "vector",
+      "pages": [
+        132,
+        127,
+        618,
+        53,
+        279,
+        241
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "mil",
+      "question": "מה המשמעות של נורית MIL?",
+      "referencePdfPages": [
+        132
+      ],
+      "mode": "hybrid",
+      "pages": [
+        132,
+        23,
+        127,
+        141,
+        21,
+        129
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "charging",
+      "question": "נדלקה נורת מערכת הטעינה",
+      "referencePdfPages": [
+        132
+      ],
+      "mode": "lexical",
+      "pages": [
+        132,
+        274,
+        273,
+        22,
+        272,
+        122
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "charging",
+      "question": "נדלקה נורת מערכת הטעינה",
+      "referencePdfPages": [
+        132
+      ],
+      "mode": "vector",
+      "pages": [
+        422,
+        419,
+        241,
+        273,
+        218,
+        454
+      ],
+      "rank": null,
+      "hitAt6": false,
+      "reciprocalRank": 0
+    },
+    {
+      "id": "charging",
+      "question": "נדלקה נורת מערכת הטעינה",
+      "referencePdfPages": [
+        132
+      ],
+      "mode": "hybrid",
+      "pages": [
+        273,
+        132,
+        274,
+        419,
+        22,
+        25
+      ],
+      "rank": 2,
+      "hitAt6": true,
+      "reciprocalRank": 0.5
+    },
+    {
+      "id": "tpms",
+      "question": "מה אומרת נורית TPMS שמהבהבת דקה ואז נשארת דולקת?",
+      "referencePdfPages": [
+        133,
+        510,
+        512,
+        513
+      ],
+      "mode": "lexical",
+      "pages": [
+        510,
+        140,
+        510,
+        133,
+        512,
+        130
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "tpms",
+      "question": "מה אומרת נורית TPMS שמהבהבת דקה ואז נשארת דולקת?",
+      "referencePdfPages": [
+        133,
+        510,
+        512,
+        513
+      ],
+      "mode": "vector",
+      "pages": [
+        510,
+        510,
+        512,
+        513,
+        509,
+        316
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "tpms",
+      "question": "מה אומרת נורית TPMS שמהבהבת דקה ואז נשארת דולקת?",
+      "referencePdfPages": [
+        133,
+        510,
+        512,
+        513
+      ],
+      "mode": "hybrid",
+      "pages": [
+        510,
+        510,
+        512,
+        133,
+        509,
+        511
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "pressure",
+      "question": "איפה מוצאים את לחץ הניפוח הנכון לצמיגים?",
+      "referencePdfPages": [
+        510,
+        511
+      ],
+      "mode": "lexical",
+      "pages": [
+        527,
+        526,
+        510,
+        50,
+        513,
+        566
+      ],
+      "rank": 3,
+      "hitAt6": true,
+      "reciprocalRank": 0.3333333333333333
+    },
+    {
+      "id": "pressure",
+      "question": "איפה מוצאים את לחץ הניפוח הנכון לצמיגים?",
+      "referencePdfPages": [
+        510,
+        511
+      ],
+      "mode": "vector",
+      "pages": [
+        511,
+        527,
+        344,
+        566,
+        501,
+        510
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "pressure",
+      "question": "איפה מוצאים את לחץ הניפוח הנכון לצמיגים?",
+      "referencePdfPages": [
+        510,
+        511
+      ],
+      "mode": "hybrid",
+      "pages": [
+        527,
+        510,
+        566,
+        344,
+        513,
+        50
+      ],
+      "rank": 2,
+      "hitAt6": true,
+      "reciprocalRank": 0.5
+    },
+    {
+      "id": "hot",
+      "question": "יוצאים אדים מתא המנוע",
+      "referencePdfPages": [
+        507,
+        508
+      ],
+      "mode": "lexical",
+      "pages": [
+        507,
+        209,
+        260,
+        264,
+        158,
+        550
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "hot",
+      "question": "יוצאים אדים מתא המנוע",
+      "referencePdfPages": [
+        507,
+        508
+      ],
+      "mode": "vector",
+      "pages": [
+        618,
+        538,
+        612,
+        550,
+        29,
+        192
+      ],
+      "rank": null,
+      "hitAt6": false,
+      "reciprocalRank": 0
+    },
+    {
+      "id": "hot",
+      "question": "יוצאים אדים מתא המנוע",
+      "referencePdfPages": [
+        507,
+        508
+      ],
+      "mode": "hybrid",
+      "pages": [
+        550,
+        610,
+        507,
+        612,
+        260,
+        29
+      ],
+      "rank": 3,
+      "hitAt6": true,
+      "reciprocalRank": 0.3333333333333333
+    },
+    {
+      "id": "oil-level",
+      "question": "מה ההבדל בין נורת מפלס שמן לנורת לחץ שמן?",
+      "referencePdfPages": [
+        131
+      ],
+      "mode": "lexical",
+      "pages": [
+        131,
+        554,
+        552,
+        147,
+        558,
+        538
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "oil-level",
+      "question": "מה ההבדל בין נורת מפלס שמן לנורת לחץ שמן?",
+      "referencePdfPages": [
+        131
+      ],
+      "mode": "vector",
+      "pages": [
+        552,
+        131,
+        359,
+        553,
+        483,
+        590
+      ],
+      "rank": 2,
+      "hitAt6": true,
+      "reciprocalRank": 0.5
+    },
+    {
+      "id": "oil-level",
+      "question": "מה ההבדל בין נורת מפלס שמן לנורת לחץ שמן?",
+      "referencePdfPages": [
+        131
+      ],
+      "mode": "hybrid",
+      "pages": [
+        131,
+        552,
+        554,
+        553,
+        618,
+        538
+      ],
+      "rank": 1,
+      "hitAt6": true,
+      "reciprocalRank": 1
+    }
+  ]
+}
