@@ -1,0 +1,42 @@
+{
+  "result": {
+    "deployment": {
+      "id": "dpl_2UHSJFTJgcKUFN9LhB5mV5nTnbzq",
+      "name": "colmobil-rag-assignment",
+      "url": "colmobil-rag-assignment-6tm0bkmxg-idanharari11s-projects.vercel.app",
+      "type": "LAMBDAS",
+      "state": "READY",
+      "createdAt": 1793027372580,
+      "creator": {
+        "uid": "KbrxfnkD7j2EXJD1LSf1yGke",
+        "username": "idanharari11"
+      },
+      "project": {
+        "id": "prj_FZdkhHEy0UOYtDotPUbxo52IhNxP",
+        "name": "colmobil-rag-assignment",
+        "framework": "nextjs"
+      },
+      "meta": {
+        "githubCommitRef": "main",
+        "githubCommitSha": "33873b247aff2873715d3343411e99287040b393",
+        "githubCommitMessage": "Bound charging-warning answers to source-backed customer triage",
+        "githubRepo": "colmobil-rag-assignment",
+        "githubOrg": "IdanHarari11"
+      },
+      "alias": [
+        "colmobil-rag-assignment.vercel.app",
+        "colmobil-rag-assignment-idanharari11s-projects.vercel.app",
+        "colmobil-rag-assignment-git-main-idanharari11s-projects.vercel.app"
+      ],
+      "target": "production",
+      "regions": [
+        "iad1"
+      ],
+      "buildingAt": 1793027373541,
+      "ready": 1793027391702,
+      "readyState": "READY",
+      "source": "git",
+      "aliasError": null
+    }
+  }
+}

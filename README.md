@@ -4,7 +4,7 @@ A first-line service demo for Hyundai Tucson Hybrid 2025. Customers can type in 
 
 ## Status
 
-Current continuation evidence is in [docs/LIVE_QA.md](docs/LIVE_QA.md). A dedicated key has been created locally, real embeddings were built for all 646 manual chunks, and provider-backed Hebrew text and Realtime audio checks ran. The source is published to the dedicated GitHub repository and Vercel built an initial protected deployment. The dedicated hosted Secret is connected and the production deployment passed live HTTP and desktop text/source checks. Real browser microphone/listening/interruptions, mobile/noise tests and independent semantic review remain pending; structural passes are not a completed release.
+The dedicated OpenAI key is connected locally and in Vercel; all 646 chunks have real embeddings. Hebrew text, provider-backed Realtime audio and protected hosted HTTP checks have run. On 2026-10-26 the user confirmed voice functionality works in their browser. A mobile sidebar drawer and the voice/send composer action are implemented. Current original-source reliability audit and exact release evidence are documented in [docs/RELIABILITY_2026-10-26.md](docs/RELIABILITY_2026-10-26.md). Finite exposed tests and model-assisted review do not establish universal answer accuracy. Physical-device/noise testing and visual verification of the latest drawer are not claimed.
 
 ## Development process
 
@@ -46,7 +46,9 @@ flowchart TD
   Input -->|Text| API[Support API]
   Input -->|Voice| RTC[Realtime WebRTC and VAD]
   RTC -->|Final transcript| API
-  API --> History[Bounded history and query rewrite]
+  API --> Route[Intent and explicit user context]
+  Route -->|Supported technical topic| History[Bounded history and query rewrite]
+  Route -->|Scope, capability or ambiguity| Bounded[Refusal, limitation or clarification]
   History --> Retrieve[Manual retrieval BM25 plus vectors]
   History --> Style[Synthetic dialogue style retrieval]
   Retrieve --> Generate[Grounded structured generation]
@@ -84,6 +86,6 @@ ElevenLabs is a possible alternative output layer after Hebrew listening tests; 
 
 ## Vercel
 
-Live protected demo: https://colmobil-rag-assignment.vercel.app . Verified application-source candidate: `66588709d1f86c7c24d2ffa4329b7ffab26fa708`; exact tested deployment: https://colmobil-rag-assignment-b82xxzjah-idanharari11s-projects.vercel.app . See LIVE_QA for pending release gates.
+Live protected demo: https://colmobil-rag-assignment.vercel.app . Latest application-source candidate: `33873b2`; deployment verification is recorded in the dated reliability report. Historical deployment checks remain in LIVE_QA.
 
 Create a separate project connected to this repository. Set `OPENAI_API_KEY` server-side and the optional settings from `.env.example`. Use `pnpm build`, Node 22+, Next.js. `next.config.ts` bundles the manual/chunks/index and synthetic examples with the API functions. Test the **exact deployment commit** and new key before submission. No changes to the original Ofek project or its keys are required.

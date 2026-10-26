@@ -55,6 +55,6 @@ Create a separate unseen test set before claiming generalization. Include indepe
 - Multi-turn text and continuous Hebrew voice work on the deployed candidate; microphone and stale-response cleanup are verified.
 - Results report exact suite size, failures, remaining limitations, model settings and deployment SHA. Do not hide failures behind averages.
 
-## Current pending checks
+## Current continuation
 
-Live generation, real embeddings, acoustic QA, browser visual QA of the deployment and production behavior remain pending credentials/deployment. GitHub additionally requested account re-authentication before making the repository public. Repository upload and the change to public visibility must be verified separately; an open confirmation form is not a successful publication.
+The original pending-credential state is resolved: GitHub upload, dedicated hosted key and Vercel deployment have been verified. The user reported browser voice working on 2026-10-26. See RELIABILITY_2026-10-26.md for the current release candidate, 76-case exposed evaluation, original-PDF audit and limitations. Visual verification of the new mobile drawer and physical-device/noise tests are not claimed.
