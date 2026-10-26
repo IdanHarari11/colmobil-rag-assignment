@@ -4,7 +4,7 @@ import { applyHistoryWindow, parseAndValidateHistory } from '@/rag/history';
 import { rewriteQuery } from '@/rag/rewrite-query';
 import { supportRetrieve } from './retrieval';
 import { SUPPORT_POLICY } from './policy';
-import { immediateTriage,limitHotCapAnswer } from './triage';
+import { immediateTriage,limitHotCapAnswer,requestsHighVoltageWork,requestsDrivingClearance } from './triage';
 import { retrieveDialogueExample } from './dialogue';
 
 export interface SupportAnswer {
@@ -41,11 +41,30 @@ export async function supportAsk(question:string,historyInput:unknown,signal?:Ab
  if(payload.status==='answered'&&/TPMS|צמיג|לחץ.{0,8}אוויר/.test(searchQuestion)&&/ברצף|קבוע/.test(question)&&!history.filter(m=>m.role==='user').concat({role:'user',content:question}).some(m=>/הבהב|מהבהב/.test(m.content))){
   payload.status='clarification_needed';payload.answer='האם הנורה הבהבה במשך כדקה לפני שנשארה דולקת, או שהיא נדלקה ברצף ללא הבהוב?';payload.citedChunkIds=[];payload.escalation='none';payload.handoffReason='';
  }
+ if(payload.status!=='out_of_scope'&&requestsDrivingClearance(question)){
+  payload.status='insufficient_evidence';payload.answer='אין באפשרותי לקבוע דרך הצ׳אט שהרכב בטוח להמשך נסיעה. יש להישאר במקום בטוח ולקבל סיוע מקצועי לפני שממשיכים. זו הדגמה בלבד — לא נשלחה פנייה ולא הוזמן שירות.';payload.citedChunkIds=[];payload.escalation='urgent';payload.handoffReason='נדרשת הערכת גורם מקצועי בשל תסמינים והבקשה לאישור המשך נסיעה.';
+ }
+ if(payload.status!=='out_of_scope'&&requestsHighVoltageWork(question)){
+  payload.status='insufficient_evidence';payload.answer='לא אוכל להדריך בניתוק, בפירוק או בתיקון עצמי של מערכת המתח הגבוה. יש לפנות למרכז שירות מורשה של יונדאי. זו הדגמה בלבד — לא נשלחה פנייה למרכז השירות.';payload.escalation='service';payload.handoffReason='עבודה במערכת המתח הגבוה מחייבת סיוע מקצועי; אין לבצע פעולות ניתוק לפי הצ׳אט.';
+ }
  if(limitHotCapAnswer(question,payload.answer)){
   // Fail closed rather than return an unnecessary cap-removal procedure.
   payload.status='insufficient_evidence';payload.answer='אין לפתוח את מכסה נוזל הקירור כשהמנוע חם. יש להמתין להתקררות המנוע. אם נדרש בירור או טיפול, יש לפנות לסיוע מקצועי.';payload.escalation='service';payload.handoffReason='נדרש סיוע מקצועי ללא הנחיות לפתיחת מכסה חם.';
  }
  if(payload.status!=='out_of_scope'&&payload.escalation==='none'&&/מומלץ.*(?:מרכז שירות|מוסך|סיוע מקצועי)|יש לפנות.*(?:מרכז שירות|מוסך|סיוע מקצועי)/.test(payload.answer)){payload.escalation='service';payload.handoffReason='מומלצת בדיקה מקצועית כפי שמפורט בתשובה.';}
+ // Preserve the manufacturer's critical shutdown step on pressure-warning follow-ups.
+ if(payload.status==='answered'&&/לחץ.*שמן|שמן.*לחץ/.test(searchQuestion)&&!/(?:כבה|לכבות|כבוי|כיבוי|דומם|לדומם|הפסק.{0,15}המנוע)/.test(payload.answer)){
+  const evidence=retrieval.hits.find(h=>{const t=h.text.replace(/\s+/g,' ');return /לחץ.*שמן|שמן.*לחץ/.test(t)&&/דומם.*מנוע|המנוע.*דומם/.test(t);});
+  if(evidence){payload.answer='יש לדומם את המנוע. '+payload.answer;payload.citedChunkIds.push(evidence.chunkId);}
+ }
+ // Include a retrieved original-manual prohibition when a coolant-cap warning is stated.
+ if(payload.status!=='out_of_scope'&&/מכסה/.test(payload.answer)&&/קירור|מצנן/.test(payload.answer)){
+  const evidence=retrieval.hits.find(h=>{const t=h.text.replace(/\s+/g,'');return /מכסה/.test(t)&&/מצנן|קירור/.test(t)&&/אלתסיר|אלתפתח/.test(t);});
+  if(evidence)payload.citedChunkIds.push(evidence.chunkId);
+ }
+ // Source identifiers are UI metadata, never speech content.
+ payload.answer=payload.answer.replace(/\([^()]*manual-p\d+-\d+[^()]*\)/g,'').replace(/\[?manual-p\d+-\d+\]?/g,'').replace(/[ \t]+/g,' ').trim();
+ validateSupportPayload(payload,new Set(retrieval.hits.map(h=>h.chunkId)));
  const sources=[...new Set(payload.citedChunkIds)].map(id=>{const h=retrieval.hits.find(h=>h.chunkId===id)!;return {chunkId:id,text:h.text,pages:h.pages||[],title:h.documentTitle||'ספר הרכב'};});
  // Metadata-only evidence: no audio, question, source body, answer or keys logged.
  console.info(JSON.stringify({event:'support_ask',requestId,retrievalMode:retrieval.mode,sourceIds:sources.map(s=>s.chunkId),status:payload.status,escalation:payload.escalation,ms:Math.round(performance.now()-start),usage:completion.usage}));

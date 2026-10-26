@@ -12,3 +12,14 @@ export function limitHotCapAnswer(question:string,answer:string):boolean {
  // Never supply a cap-removal procedure in response to an explicitly hot-engine question.
  return /מכסה/.test(question)&&/קירור|רדיאטור/.test(question)&&/חם|רותח/.test(question)&&/מגבת|לסובב|סובב|בעת (?:הסרת|ההסרה)|לשחרר.*לחץ/.test(answer);
 }
+
+/** The customer-facing demo must never provide a high-voltage isolation procedure. */
+export function requestsHighVoltageWork(question:string):boolean {
+ return /מתח\s*גבוה|סולל[הת].{0,20}היבריד|סוללת.{0,12}הנעה/.test(question)
+  && /לנתק|מנתק|ניתוק|לפרק|פירוק|להחליף|החלפ|לתקן|תיקון/.test(question);
+}
+
+export function requestsDrivingClearance(question:string):boolean {
+ return /אפשר|מותר|בטוח/.test(question)&&/לנסוע|להמשיך/.test(question)
+  && /נור[הת]|רועד|רועד[ת]?|רעיד|עשן|אדים|מתחמם/.test(question);
+}

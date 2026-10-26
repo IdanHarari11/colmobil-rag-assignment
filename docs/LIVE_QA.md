@@ -53,3 +53,8 @@ Vercel authentication was renewed after the user approved device login. The exis
 - Reports: `eval_results/colmobil-deployed.json` and `colmobil-deployed-conversation.json`.
 
 The earlier expired-authentication blocker is resolved. Remaining gates are actual browser microphone/audio/listening, interruption/noise/mobile tests and independent semantic review. The user was offered an assisted microphone test; no response or successful acoustic test is assumed. This final documentation update changes no application source relative to the tested SHA.
+
+
+## Continuation — 2026-10-26
+
+See `SOURCE_REVIEW_2026-10-26.md` for the original-PDF review, failed high-voltage/diagnostic claims and measured corrections. The user is operating the browser themselves after declining the browser-origin permission. Their screenshot revealed a hidden voice footer, which was fixed by keeping composer controls in the viewport. A single circular voice/send/end-call action was implemented at their request. Actual visual/mobile and human microphone results must still be reported; no acoustic success is inferred.
