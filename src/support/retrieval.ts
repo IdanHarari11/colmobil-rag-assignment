@@ -8,6 +8,7 @@ export function manualSearchQuery(question: string) {
   // Bridge everyday warning-light wording to the manufacturer's terms; search only.
   let normalized=question.replace(/נורת/g,'נורית').replace(/שישים שניות|60 שניות/g,'דקה');
   if(/צמיג|לחץ.{0,8}אוויר/.test(normalized))normalized+=' מערכת TPMS';
+  if(/איפה|היכן/.test(normalized)&&/לחץ|ניפוח/.test(normalized))normalized+=' תווית לחצי האוויר בצמיגים צד הנהג עמוד אמצעי';
   if(/אדים|מתחמם|מכסה.{0,15}קירור|מכסה.{0,15}מצנן/.test(normalized))normalized+=' אם המנוע מתחמם יתר על המידה לעולם אל תסיר מכסה המצנן';
   return /לחץ.*שמן|שמן.*לחץ/.test(normalized)
     ? normalized+' נורית אזהרת לחץ שמן מנוע נמוך' : normalized;

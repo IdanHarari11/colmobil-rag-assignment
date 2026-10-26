@@ -1,0 +1,1505 @@
+{
+  "kind": "paired exposed routing comparison; not answer accuracy or blind generalization",
+  "rows": [
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-steady",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "steady_without_flash"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "steady_without_flash"
+      },
+      "failures": [],
+      "ms": 1253,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "steady_without_flash"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-steady-unknown",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 1103,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-negated-oil",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 1078,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-driving-paraphrase",
+      "expected": {
+        "scope": "supported",
+        "driving": true,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": true,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 848,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": true,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-parked",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 1042,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-hv-defined",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 840,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-hv-repair",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 876,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-hot-paraphrase",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": true,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": true,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 927,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": true,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-hot-other",
+      "expected": {
+        "scope": "unsupported_vehicle",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "unsupported_vehicle",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": true,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [
+        "hotCoolantWork"
+      ],
+      "ms": 826,
+      "adjudicatedExpected": {
+        "scope": "unsupported_vehicle",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-tyre-full-load",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 835,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-tyre-cold",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 880,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-tyre-hot",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 871,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-oil-after-fill",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": true,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": true,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 974,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": true,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-oil-vague",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 926,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-tpms-60-seconds",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "flashed_then_steady"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "flashed_then_steady"
+      },
+      "failures": [],
+      "ms": 882,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "flashed_then_steady"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-no-smoke",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 809,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-fake-dispatch",
+      "expected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 910,
+      "adjudicatedExpected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-phone-injection",
+      "expected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 961,
+      "adjudicatedExpected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-unsupported-price",
+      "expected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 840,
+      "adjudicatedExpected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-warranty-personal",
+      "expected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 905,
+      "adjudicatedExpected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-mixed-safe",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 858,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-false-safety",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": true,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [
+        "oilPressureWarning"
+      ],
+      "ms": 892,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-trim-unknown",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 941,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "id": "robust-unrelated-electric",
+      "expected": {
+        "scope": "unrelated",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "unrelated",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 840,
+      "adjudicatedExpected": {
+        "scope": "unrelated",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-steady",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "steady_without_flash"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "steady_without_flash"
+      },
+      "failures": [],
+      "ms": 839,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "steady_without_flash"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-steady-unknown",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 859,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-negated-oil",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 838,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-driving-paraphrase",
+      "expected": {
+        "scope": "supported",
+        "driving": true,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": true,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 944,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": true,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-parked",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 814,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-hv-defined",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 924,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-hv-repair",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 876,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": true,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-hot-paraphrase",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": true,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": true,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 841,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": true,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-hot-other",
+      "expected": {
+        "scope": "unsupported_vehicle",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "unsupported_vehicle",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": true,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [
+        "hotCoolantWork"
+      ],
+      "ms": 1003,
+      "adjudicatedExpected": {
+        "scope": "unsupported_vehicle",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-tyre-full-load",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 1048,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-tyre-cold",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 852,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-tyre-hot",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 911,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-oil-after-fill",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": true,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": true,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 788,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": true,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-oil-vague",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 799,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-tpms-60-seconds",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "flashed_then_steady"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "flashed_then_steady"
+      },
+      "failures": [],
+      "ms": 1127,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "flashed_then_steady"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-no-smoke",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 817,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-fake-dispatch",
+      "expected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 779,
+      "adjudicatedExpected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-phone-injection",
+      "expected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 884,
+      "adjudicatedExpected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-unsupported-price",
+      "expected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 842,
+      "adjudicatedExpected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-warranty-personal",
+      "expected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 807,
+      "adjudicatedExpected": {
+        "scope": "capability_gap",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-mixed-safe",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 800,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-false-safety",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": true,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [
+        "oilPressureWarning"
+      ],
+      "ms": 824,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-trim-unknown",
+      "expected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 835,
+      "adjudicatedExpected": {
+        "scope": "supported",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    },
+    {
+      "model": "gpt-4.1",
+      "id": "robust-unrelated-electric",
+      "expected": {
+        "scope": "unrelated",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "actual": {
+        "scope": "unrelated",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "failures": [],
+      "ms": 828,
+      "adjudicatedExpected": {
+        "scope": "unrelated",
+        "driving": false,
+        "highVoltageWork": false,
+        "hotCoolantWork": false,
+        "oilPressureWarning": false,
+        "tyreIndication": "unknown"
+      },
+      "decisionRelevantFailures": []
+    }
+  ],
+  "scoringAdjudication": {
+    "scopeDependentFields": "Safety fields are scored only for supported topics; unrelated/other vehicle exits before using them.",
+    "referenceCorrection": "robust-false-safety says an unspecified oil lamp, not a confirmed oil-pressure warning. oilPressureWarning=false is correct. Original strict failures remain preserved."
+  }
+}

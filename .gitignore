@@ -54,3 +54,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Direct PDF text for offline QA; regenerated from the committed original.
+/data/qa-original-pages.json
