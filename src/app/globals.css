@@ -189,3 +189,12 @@ html,body{margin:0;min-height:100%;font-family:Arial,'Noto Sans Hebrew',sans-ser
 .composer-action:hover:not(:disabled){background:#2458a7}
 .composer-action.voice-active{background:#a64943}
 .composer-footer .voice-hint{color:#557c89;font-size:11px}
+
+/* Native modal drawer supplies keyboard focus containment and Escape handling. */
+.mobile-menu{display:none;border:0;background:transparent;color:#28566a;width:40px;height:40px;align-items:center;justify-content:center;border-radius:8px;flex-shrink:0}
+.sidebar-drawer{position:fixed;inset:0 0 0 auto;margin:0;width:min(320px,86vw);max-width:none;height:100dvh;max-height:100dvh;border:0;padding:22px;background:#fff;color:#173a50;overflow-y:auto;direction:rtl;box-shadow:-12px 0 40px #173a5020}
+.sidebar-drawer::backdrop{background:#142d4270}
+.sidebar-drawer-content{display:flex;flex-direction:column;min-height:calc(100% - 44px)}
+.sidebar-close{display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin-inline-start:auto;margin-bottom:8px;background:transparent;border:0;border-radius:8px;color:#416e7c}
+@media(max-width:760px){.mobile-menu{display:inline-flex}.support-header{padding-inline:12px}.support-header>div{gap:5px}}
+@media(max-width:380px){.header-badge{display:none}}

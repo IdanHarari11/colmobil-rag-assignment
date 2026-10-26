@@ -1,15 +1,21 @@
 'use client';
 import { useEffect,useRef,useState } from 'react';
 import Link from 'next/link';
-import { ArrowUp,AudioLines,CarFront,ChevronDown,FileText,Headphones,Mic,MicOff,PhoneOff,ShieldCheck,Plus,MessageSquare,ExternalLink } from 'lucide-react';
+import { ArrowUp,AudioLines,CarFront,ChevronDown,FileText,Headphones,Mic,MicOff,PhoneOff,ShieldCheck,Plus,MessageSquare,ExternalLink,Menu,X } from 'lucide-react';
 import { SupportVoice,type VoiceState } from './voice-client';
 import type { SupportAnswer } from './service';
 type Message={id:string;role:'user'|'assistant';text:string;result?:SupportAnswer;interrupted?:boolean};
 const states:Record<VoiceState,string>={connecting:'מתחברים לשיחה…',listening:'מקשיבים לך',thinking:'בודקים בספר הרכב…',speaking:'משיבים לך',disconnected:'שיחה קולית רציפה'};
 const examples=['נדלקה לי נורה בלוח המחוונים','איך בודקים לחץ אוויר בצמיגים?','הרכב לא מניע — מה עושים?'];
+function SidebarContent({onNewChat}:{onNewChat:()=>void}){return <><Link className="brand" href="/" aria-label="כלמוביל שירות"><span className="brand-mark"><CarFront size={26}/></span><span>כלמוביל<span className="brand-sub">תמיד בדרך שלך</span></span></Link>
+   <button className="new-chat" onClick={onNewChat}><Plus size={18}/>שיחה חדשה</button>
+   <div className="sidebar-caption">מרכז השירות הדיגיטלי</div><div className="sidebar-current"><MessageSquare size={18}/>העוזר האישי לרכב שלך</div>
+   <div className="sidebar-bottom"><div className="sidebar-car"><CarFront/><div><strong>יונדאי טוסון היברידי</strong><span>ספר רכב · 2025</span></div></div><p>הדגמת מטלת בית · ללא חיבור למוקד שירות</p></div></>;}
 export function SupportChat(){
  const [messages,setMessages]=useState<Message[]>([]),[input,setInput]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState(''),[voiceState,setVoiceState]=useState<VoiceState>('disconnected'),[muted,setMuted]=useState(false),[ready,setReady]=useState<boolean|null>(null);
  const history=useRef<Message[]>([]),voice=useRef<SupportVoice|null>(null),scroll=useRef<HTMLDivElement>(null),request=useRef<AbortController|null>(null),generation=useRef(0);
+ const [sidebarOpen,setSidebarOpen]=useState(false);
+ const sidebarDialog=useRef<HTMLDialogElement>(null);
  const active=voiceState!=='disconnected';
  useEffect(()=>{void fetch('/api/support').then(r=>r.json()).then(r=>setReady(r.configured)).catch(()=>setReady(false));return()=>{voice.current?.stop();request.current?.abort();};},[]);
  useEffect(()=>{scroll.current?.scrollIntoView({behavior:'smooth'});},[messages,busy]);
@@ -30,14 +36,14 @@ export function SupportChat(){
   setError('');setMuted(false);
   const session=new SupportVoice({onState:setVoiceState,onError:setError,onQuestion:ask});voice.current=session;void session.start();
  }
- function reset(){generation.current++;request.current?.abort();voice.current?.stop();history.current=[];setMessages([]);setError('');setBusy(false);}
+ function reset(){sidebarDialog.current?.close();setInput('');generation.current++;request.current?.abort();voice.current?.stop();history.current=[];setMessages([]);setError('');setBusy(false);}
  return <div className="support-app">
-  <aside className="support-sidebar"><Link className="brand" href="/" aria-label="כלמוביל שירות"><span className="brand-mark"><CarFront size={26}/></span><span>כלמוביל<span className="brand-sub">תמיד בדרך שלך</span></span></Link>
-   <button className="new-chat" onClick={reset}><Plus size={18}/>שיחה חדשה</button>
-   <div className="sidebar-caption">מרכז השירות הדיגיטלי</div><div className="sidebar-current"><MessageSquare size={18}/>העוזר האישי לרכב שלך</div>
-   <div className="sidebar-bottom"><div className="sidebar-car"><CarFront/><div><strong>יונדאי טוסון היברידי</strong><span>ספר רכב · 2025</span></div></div><p>הדגמת מטלת בית · ללא חיבור למוקד שירות</p></div>
-  </aside>
-  <main className="support-main"><header className="support-header"><div><span className="online-dot"/>העוזר הדיגיטלי של כלמוביל</div><span className="header-badge"><ShieldCheck size={15}/>מבוסס על ספר הרכב</span></header>
+  <aside className="support-sidebar"><SidebarContent onNewChat={reset}/></aside>
+  <dialog ref={sidebarDialog} id="mobile-sidebar" className="sidebar-drawer" aria-label="תפריט שיחה" onClose={()=>setSidebarOpen(false)} onClick={e=>{if(e.target===e.currentTarget)sidebarDialog.current?.close();}}>
+   <button type="button" className="sidebar-close" aria-label="סגירת תפריט" autoFocus onClick={()=>sidebarDialog.current?.close()}><X size={22}/></button>
+   <div className="sidebar-drawer-content"><SidebarContent onNewChat={reset}/></div>
+  </dialog>
+  <main className="support-main"><header className="support-header"><div><button type="button" className="mobile-menu" aria-label="פתיחת תפריט" aria-haspopup="dialog" aria-controls="mobile-sidebar" aria-expanded={sidebarOpen} onClick={()=>{sidebarDialog.current?.showModal();setSidebarOpen(true);}}><Menu size={22}/></button><span className="online-dot"/>העוזר הדיגיטלי של כלמוביל</div><span className="header-badge"><ShieldCheck size={15}/>מבוסס על ספר הרכב</span></header>
    <div className={'conversation '+(!messages.length?'empty':'')}>
     {!messages.length?<section className="welcome"><div className="welcome-icon"><AudioLines size={32}/></div><div className="eyebrow">קצת יותר ביטחון. בכל נסיעה.</div><h1>איך אפשר לעזור<br/><span>עם הרכב שלך?</span></h1><p>נורה נדלקה? משהו לא ברור?<br/>אפשר לשאול בעברית, בכתיבה או בשיחה קולית.</p>
      <div className="suggestions">{examples.map((s,i)=><button key={s} onClick={()=>void submit(s)}><span className="suggestion-number">0{i+1}</span>{s}<span className="suggestion-arrow">↖</span></button>)}</div>

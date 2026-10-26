@@ -58,3 +58,9 @@ The earlier expired-authentication blocker is resolved. Remaining gates are actu
 ## Continuation — 2026-10-26
 
 See `SOURCE_REVIEW_2026-10-26.md` for the original-PDF review, failed high-voltage/diagnostic claims and measured corrections. The user is operating the browser themselves after declining the browser-origin permission. Their screenshot revealed a hidden voice footer, which was fixed by keeping composer controls in the viewport. A single circular voice/send/end-call action was implemented at their request. Actual visual/mobile and human microphone results must still be reported; no acoustic success is inferred.
+
+## User-assisted voice and responsive feedback
+
+On 2026-10-26 the user reported that the waveform button and all voice-related functionality worked in their browser. This is user-reported confirmation, distinct from instrumented acoustic measurements. They clarified that their mobile observation was Chrome desktop device emulation for iPhone 16 Pro Max, not a physical iPhone. They found that new chat was unavailable because the sidebar was hidden.
+
+Added a mobile menu button and native modal sidebar with new-chat access, close button, backdrop dismissal, Escape handling and native focus containment. New chat closes the drawer and resets the text composer. TypeScript, lint and production build passed. Visual/emulated-device verification of this drawer remains user-assisted; no physical-device success is claimed.
