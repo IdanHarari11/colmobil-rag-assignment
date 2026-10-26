@@ -34,6 +34,7 @@ export async function supportAsk(question:string,historyInput:unknown,signal?:Ab
  const route=await routeRequest(question,history,client,signal);
  if(route.scope==='unrelated'||route.scope==='unsupported_vehicle')return {requestId,status:'out_of_scope',answer:'אפשר לסייע כאן רק בנושאי יונדאי טוסון היברידי 2025, לפי ספר הרכב שסופק. אשמח לשאלה על הרכב הנתמך.',sources:[],escalation:'none',handoffReason:'',retrievalMode:'scope_route'};
  if(route.driving||immediateTriage(question))return {requestId,status:'clarification_needed',answer:'יש להפסיק את השימוש בטלפון ולעצור במקום בטוח לפני שנמשיך. לאחר העצירה אפשר לתאר את הנורה או ההודעה.',sources:[],escalation:'none',handoffReason:'',retrievalMode:'safety_pause'};
+ if(route.scope==='ambiguous_symptom')return {requestId,status:'clarification_needed',answer:'איזו נורה או הודעה מופיעה? אפשר לתאר את הסמל, הצבע והאם הוא מהבהב או דולק ברצף.',sources:[],escalation:'none',handoffReason:'',retrievalMode:'clarification_route'};
  if(route.scope==='capability_gap')return {requestId,status:'insufficient_evidence',answer:'אין למערכת ההדגמה גישה למחירים, לכיסוי האחריות האישי, לפרטי קשר או להזמנת שירות בפועל. יש לפנות לגורם השירות המתאים. לא נשלחה פנייה ולא הוזמן שירות.',sources:[],escalation:'service',handoffReason:'הבקשה דורשת מידע אישי או פעולת שירות שאינם זמינים במערכת ההדגמה.',retrievalMode:'capability_route',handoff:{simulated:true,summary:question}};
  let searchQuestion=question;
  if(history.length)searchQuestion=(await rewriteQuery({question,history,signal})).standaloneQuestion;
