@@ -72,6 +72,11 @@ export async function supportAsk(question:string,historyInput:unknown,signal?:Ab
   const evidence=retrieval.hits.find(h=>{const t=h.text.replace(/\s+/g,' ');return /לחץ.*שמן|שמן.*לחץ/.test(t)&&/דומם.*מנוע|המנוע.*דומם/.test(t);});
   if(evidence){payload.status='answered';payload.answer='יש לעצור במקום בטוח ולדומם מיד את המנוע. אין להמשיך בנסיעה עם נורת לחץ שמן דולקת; יש לפנות לסיוע מקצועי. אין להניע שוב רק כדי לבדוק אם הנורה נעלמה.';payload.citedChunkIds=[evidence.chunkId];payload.escalation='urgent';payload.handoffReason='נורת לחץ שמן פעילה מחייבת כיבוי מנוע וסיוע מקצועי.';}
  }
+ // Explain both oil indicators without losing the normal pre-start lamp condition.
+ if(!route.oilPressureWarning&&/הבדל/.test(question)&&/מפלס/.test(question)&&/לחץ/.test(question)&&/שמן/.test(question)){
+  const evidence=retrieval.hits.find(h=>h.pages?.includes(131)&&h.text.replace(/\s+/g,'').includes('מפלסשמן'));
+  if(evidence){payload.status='answered';payload.answer='נורת לחץ שמן מתריעה על לחץ שמן נמוך במנוע; אם היא נדלקת במהלך פעולת המנוע יש לעצור בבטחה ולדומם את המנוע. נורת מפלס שמן נדלקת במצב ON לפני התנעת המנוע ונשארת דולקת עד ההתנעה, וגם כאשר נדרשת בדיקת מפלס שמן. לכן חשוב להבחין בין הופעתה לפני התנעה לבין אזהרה בזמן פעולת המנוע. אם יש אזהרה פעילה או ספק בזיהוי, יש לפנות לסיוע מקצועי.';payload.citedChunkIds=[evidence.chunkId];payload.escalation='service';payload.handoffReason='אם קיימת אזהרה פעילה או אי-ודאות בזיהויה, נדרשת בדיקה מקצועית.';}
+ }
  // Include a retrieved original-manual prohibition when a coolant-cap warning is stated.
  if(payload.status!=='out_of_scope'&&/מכסה/.test(payload.answer)&&/קירור|מצנן/.test(payload.answer)){
   const evidence=retrieval.hits.find(h=>{const t=h.text.replace(/\s+/g,'');return /מכסה/.test(t)&&/מצנן|קירור/.test(t)&&/אלתסיר|אלתפתח/.test(t);});
