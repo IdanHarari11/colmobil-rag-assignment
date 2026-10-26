@@ -41,8 +41,6 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env / secrets — never commit keys
-.env
-.env.*
 !.env.example
 
 # local planning scratch (not part of submission)
@@ -57,3 +55,7 @@ next-env.d.ts
 
 # Direct PDF text for offline QA; regenerated from the committed original.
 /data/qa-original-pages.json
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat

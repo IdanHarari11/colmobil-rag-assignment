@@ -1,0 +1,353 @@
+{
+  "input": "eval_results/colmobil-answers-1793026922445.json",
+  "applicationCommit": "59a342d2084580d06098c4c26eee453b01beecb9",
+  "reviewModel": "gpt-4.1",
+  "kind": "model-assisted original-source audit; not independent human certification",
+  "originalPdfSha256": "29c33530abe4d7b37fd1862f18a294295456c317ef27d30fbe984668eb9f562d",
+  "requested": 12,
+  "completed": 12,
+  "errors": 0,
+  "rows": [
+    {
+      "id": "fresh-01",
+      "review": {
+        "grounding": "not_applicable",
+        "completeness": "not_applicable",
+        "safety": "not_applicable",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": []
+      },
+      "usage": {
+        "prompt_tokens": 807,
+        "completion_tokens": 39,
+        "total_tokens": 846,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-02",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": []
+      },
+      "usage": {
+        "prompt_tokens": 822,
+        "completion_tokens": 33,
+        "total_tokens": 855,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-03",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [
+          "The answer correctly refuses to guess the warning light based on color alone, as required by the rubric."
+        ],
+        "supportedPdfPages": []
+      },
+      "usage": {
+        "prompt_tokens": 809,
+        "completion_tokens": 53,
+        "total_tokens": 862,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-04",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": [
+          510,
+          513
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 2742,
+        "completion_tokens": 36,
+        "total_tokens": 2778,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-05",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": [
+          131
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 1563,
+        "completion_tokens": 34,
+        "total_tokens": 1597,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-06",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": [
+          510,
+          512,
+          133
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 3529,
+        "completion_tokens": 38,
+        "total_tokens": 3567,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-07",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": [
+          507
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 2104,
+        "completion_tokens": 34,
+        "total_tokens": 2138,
+        "prompt_tokens_details": {
+          "cached_tokens": 1920,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-08",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": []
+      },
+      "usage": {
+        "prompt_tokens": 823,
+        "completion_tokens": 33,
+        "total_tokens": 856,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-09",
+      "review": {
+        "grounding": "not_applicable",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": []
+      },
+      "usage": {
+        "prompt_tokens": 819,
+        "completion_tokens": 35,
+        "total_tokens": 854,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-10",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": []
+      },
+      "usage": {
+        "prompt_tokens": 812,
+        "completion_tokens": 33,
+        "total_tokens": 845,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-11",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": []
+      },
+      "usage": {
+        "prompt_tokens": 841,
+        "completion_tokens": 33,
+        "total_tokens": 874,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "fresh-12",
+      "review": {
+        "grounding": "pass",
+        "completeness": "pass",
+        "safety": "pass",
+        "behavior": "pass",
+        "severity": "none",
+        "issues": [],
+        "supportedPdfPages": [
+          32,
+          33,
+          34
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 2680,
+        "completion_tokens": 38,
+        "total_tokens": 2718,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    }
+  ]
+}

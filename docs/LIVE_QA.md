@@ -1,4 +1,6 @@
-# Live QA continuation — 2026-10-25
+# Live QA history — 2026-10-25 onward
+
+Earlier entries below are chronological snapshots, including resolved blockers. Current candidate findings are in [RELIABILITY_2026-10-26.md](RELIABILITY_2026-10-26.md).
 
 This is a tested development candidate, not a production-ready release. Final deployment and acoustic results are recorded below as they complete.
 
@@ -64,3 +66,8 @@ See `SOURCE_REVIEW_2026-10-26.md` for the original-PDF review, failed high-volta
 On 2026-10-26 the user reported that the waveform button and all voice-related functionality worked in their browser. This is user-reported confirmation, distinct from instrumented acoustic measurements. They clarified that their mobile observation was Chrome desktop device emulation for iPhone 16 Pro Max, not a physical iPhone. They found that new chat was unavailable because the sidebar was hidden.
 
 Added a mobile menu button and native modal sidebar with new-chat access, close button, backdrop dismissal, Escape handling and native focus containment. New chat closes the drawer and resets the text composer. TypeScript, lint and production build passed. Visual/emulated-device verification of this drawer remains user-assisted; no physical-device success is claimed.
+
+
+## Final audit continuation — 26 October 2026
+
+Current findings, closed defects, review disagreements and remaining visual/device limits are in RELIABILITY_2026-10-26.md. Final application source is 33873b247aff2873715d3343411e99287040b393. Complete exposed76 regression, all76 original-source model reviews, actual-history conversations, targeted final-patch regressions and final local gates are retained. The report separates their source versions and does not label reviewer disagreements as automatic passes.

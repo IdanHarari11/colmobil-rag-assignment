@@ -1,0 +1,52 @@
+{
+  "kind": "Agent original-source adjudication of model-assisted review; not independent human certification",
+  "fullRunSourceCandidate": "59a342d2084580d06098c4c26eee453b01beecb9",
+  "fullRunReports": [
+    "colmobil-answers-1793026999633.json",
+    "colmobil-answers-1793026922445.json",
+    "colmobil-answers-1793026970941.json"
+  ],
+  "modelReviews": [
+    "audit-59a342d-main.json",
+    "audit-59a342d-fresh.json",
+    "audit-59a342d-robustness.json"
+  ],
+  "modelReviewSummary": {
+    "reviewed": 76,
+    "errors": 0,
+    "severityNone": 72,
+    "minor": 2,
+    "major": 2,
+    "critical": 0
+  },
+  "adjudications": [
+    {
+      "ids": [
+        "oil",
+        "followup-oil"
+      ],
+      "rawSeverity": "major",
+      "disposition": "Not accepted as unsafe/incorrect triage",
+      "reason": "Original page131 explicitly requires engine shutdown and warns of severe damage if engine not stopped immediately. The assignment asks concise first-line customer triage, not a full oil-check procedure. Omitting that procedure and declining a restart experiment is an application safety boundary, not an invented diagnosis or mechanical fact. No claim is made that the manual literally says never restart. Source reviewed directly."
+    },
+    {
+      "ids": [
+        "charging"
+      ],
+      "rawSeverity": "minor",
+      "disposition": "No material defect in final answer",
+      "reason": "Actual answer includes safe stopping, engine off and professional help, supported by page132. It deliberately omits belt inspection; omission of an unsolicited mechanical procedure is acceptable for this roadside demo."
+    },
+    {
+      "ids": [
+        "oil-level"
+      ],
+      "rawSeverity": "minor",
+      "disposition": "Corrected and retested",
+      "reason": "Clarified manufacturer normal ON/pre-start lamp condition directly from PDF131. Final targeted three-case report colmobil-answers-1793027127027.json retains the full distinction and pressure-warning regression."
+    }
+  ],
+  "remainingKnownMaterialFailuresInReviewedOutputs": 0,
+  "limits": "Exposed finite tests, model/agent review, no independent human automotive certification; no universal future-answer guarantee.",
+  "supplementaryReview": "audit-final-oil-distinction.json: oil-level passes; the same oil/pressure safety-boundary disagreement recurs in two regression rows and is adjudicated by the reasons above, not hidden."
+}
