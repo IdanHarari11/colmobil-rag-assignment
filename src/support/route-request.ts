@@ -25,5 +25,8 @@ oilPressureWarning: true only when the user has explicitly identified an ACTIVE 
 tyreIndication: flashed_then_steady only if user says tyre/TPMS light flashed about a minute/sixty seconds and then stayed on. steady_without_flash only if user explicitly says steady WITHOUT any prior flashing ('לא הבהבה', 'ללא הבהוב קודם'). Otherwise unknown. A prior statement about oil/other light does not establish tyre flashing. Latest correction overrides earlier user facts. Never infer light identity or flashing pattern from a source, an assistant assumption, or absence of details.`;
 export async function routeRequest(question:string,history:ChatHistoryMessage[],client:OpenAI,signal?:AbortSignal):Promise<RequestRoute>{
  const c=await client.chat.completions.create({model:process.env.ROUTING_MODEL||process.env.GENERATION_MODEL||'gpt-4.1-mini',temperature:0,max_completion_tokens:250,messages:[{role:'system',content:policy},{role:'user',content:JSON.stringify({question,history})}],response_format:{type:'json_schema',json_schema:{name:'request_route',strict:true,schema}}},{signal});
- return parseRequestRoute(JSON.parse(c.choices[0]?.message?.content||'null'));
+ const route=parseRequestRoute(JSON.parse(c.choices[0]?.message?.content||'null'));
+ const userFacts=history.filter(m=>m.role==='user').map(m=>m.content).concat(question).join('\n');
+ if(route.tyreIndication==='steady_without_flash'&&!/לא\s+(?:הבהב|מהבהב)|ללא\s+הבהוב|בלי\s+הבהוב/.test(userFacts))route.tyreIndication='unknown';
+ return route;
 }

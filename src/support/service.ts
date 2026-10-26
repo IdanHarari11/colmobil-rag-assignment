@@ -67,10 +67,10 @@ export async function supportAsk(question:string,historyInput:unknown,signal?:Ab
   if(evidence){payload.status='answered';payload.answer='אם אדים יוצאים מתא המנוע, יש לדומם את המנוע ולא לפתוח את מכסה המנוע עד שהאדים מפסיקים. יש להישאר במקום בטוח ולפנות לסיוע מקצועי.';payload.citedChunkIds=[evidence.chunkId];payload.escalation='service';payload.handoffReason='נדרשת בדיקה מקצועית עקב אדים מתא המנוע.';}
  }
  if(payload.status!=='out_of_scope'&&payload.escalation==='none'&&/מומלץ.*(?:מרכז שירות|מוסך|סיוע מקצועי)|יש לפנות.*(?:מרכז שירות|מוסך|סיוע מקצועי)/.test(payload.answer)){payload.escalation='service';payload.handoffReason='מומלצת בדיקה מקצועית כפי שמפורט בתשובה.';}
- // Preserve the manufacturer's critical shutdown step on pressure-warning follow-ups.
- if(payload.status==='answered'&&route.oilPressureWarning&&!/(?:כבה|לכבות|כבוי|כיבוי|דומם|לדומם|הפסק.{0,15}המנוע)/.test(payload.answer)){
+ // Keep active pressure-warning triage anchored to the original shutdown warning.
+ if(payload.status!=='out_of_scope'&&route.oilPressureWarning){
   const evidence=retrieval.hits.find(h=>{const t=h.text.replace(/\s+/g,' ');return /לחץ.*שמן|שמן.*לחץ/.test(t)&&/דומם.*מנוע|המנוע.*דומם/.test(t);});
-  if(evidence){payload.answer='יש לדומם את המנוע. '+payload.answer;payload.citedChunkIds.push(evidence.chunkId);}
+  if(evidence){payload.status='answered';payload.answer='יש לעצור במקום בטוח ולדומם מיד את המנוע. אין להמשיך בנסיעה עם נורת לחץ שמן דולקת; יש לפנות לסיוע מקצועי. אין להניע שוב רק כדי לבדוק אם הנורה נעלמה.';payload.citedChunkIds=[evidence.chunkId];payload.escalation='urgent';payload.handoffReason='נורת לחץ שמן פעילה מחייבת כיבוי מנוע וסיוע מקצועי.';}
  }
  // Include a retrieved original-manual prohibition when a coolant-cap warning is stated.
  if(payload.status!=='out_of_scope'&&/מכסה/.test(payload.answer)&&/קירור|מצנן/.test(payload.answer)){
