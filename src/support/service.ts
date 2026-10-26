@@ -72,6 +72,11 @@ export async function supportAsk(question:string,historyInput:unknown,signal?:Ab
   const evidence=retrieval.hits.find(h=>{const t=h.text.replace(/\s+/g,' ');return /לחץ.*שמן|שמן.*לחץ/.test(t)&&/דומם.*מנוע|המנוע.*דומם/.test(t);});
   if(evidence){payload.status='answered';payload.answer='יש לעצור במקום בטוח ולדומם מיד את המנוע. אין להמשיך בנסיעה עם נורת לחץ שמן דולקת; יש לפנות לסיוע מקצועי. אין להניע שוב רק כדי לבדוק אם הנורה נעלמה.';payload.citedChunkIds=[evidence.chunkId];payload.escalation='urgent';payload.handoffReason='נורת לחץ שמן פעילה מחייבת כיבוי מנוע וסיוע מקצועי.';}
  }
+ // Keep charging-warning customer guidance bounded despite occasional model procedure drift.
+ if(payload.status!=='out_of_scope'&&/(?:נור|אזהר).*טעינ|טעינ.*(?:נור|אזהר)/.test(question)){
+  const evidence=retrieval.hits.find(h=>h.pages?.includes(132)&&h.text.replace(/\s+/g,'').includes('טעינה'));
+  if(evidence){payload.status='answered';payload.answer='אם נדלקת נורת מערכת הטעינה, יש לעצור במקום בטוח בהקדם האפשרי ולדומם את המנוע. יש לפנות למרכז שירות מורשה של יונדאי לבדיקה מקצועית של מערכת הטעינה.';payload.citedChunkIds=[evidence.chunkId];payload.escalation='service';payload.handoffReason='נורת מערכת טעינה דורשת בדיקה מקצועית.';}
+ }
  // Explain both oil indicators without losing the normal pre-start lamp condition.
  if(!route.oilPressureWarning&&/הבדל/.test(question)&&/מפלס/.test(question)&&/לחץ/.test(question)&&/שמן/.test(question)){
   const evidence=retrieval.hits.find(h=>h.pages?.includes(131)&&h.text.replace(/\s+/g,'').includes('מפלסשמן'));
